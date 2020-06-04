@@ -24,9 +24,23 @@ def div(content="", attributes={}):
     return tag("div", content, attributes, True)
 
 
-def br(name="br"):
-    return tag(name, "", {}, False)
+def br():
+    return tag("br", "", {}, False)
+
+
+def p(content="", attributes={}):
+    return tag("p", content, attributes, False)
 
 
 def img(attributes={}):
     return tag("img", "", attributes, False)
+
+
+if __name__ == '__main__':
+    print(
+        div(
+            div(
+                f"Hello{br()}World"
+            )
+        )
+    )

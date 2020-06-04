@@ -1,5 +1,5 @@
 import unittest
-import tdd_dom
+from source import tdd_dom
 
 
 class TestTddDom(unittest.TestCase):
@@ -31,6 +31,9 @@ class TestTddDom(unittest.TestCase):
     def test_div(self):
         self.assertEqual(tdd_dom.div(), "<div></div>")
 
+    def test_p(self):
+        self.assertEqual(tdd_dom.p("Hello World."), "<p>Hello World</p>")
+
     def test_br(self):
         self.assertTrue(tdd_dom.br().startswith("<br"))
         self.assertTrue(tdd_dom.br().endswith("/>"))
@@ -41,6 +44,9 @@ class TestTddDom(unittest.TestCase):
 
     def test_img_src(self):
         self.assertTrue("src=\"/abc/\"" in tdd_dom.img({"src": "/abc/"}))
+
+    def test_multiline_content_src(self):
+        self.assertTrue("\na\nb\nc\n" in tdd_dom.div("\na\nb\nc\n"))
 
 
 if __name__ == '__main__':
