@@ -29,14 +29,20 @@ def br():
 
 
 def p(content="", attributes={}):
-    return tag("p", content, attributes, False)
+    return tag("p", content, attributes, True)
 
 
 def img(attributes={}):
     return tag("img", "", attributes, False)
 
 
+import sys
+
 if __name__ == '__main__':
+    orig_stdout = sys.stdout
+    f = open('output.html', 'w')
+    sys.stdout = f
+
     print(
         div(
             div(
@@ -44,3 +50,6 @@ if __name__ == '__main__':
             )
         )
     )
+
+    sys.stdout = orig_stdout
+    f.close()

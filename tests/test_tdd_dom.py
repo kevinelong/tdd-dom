@@ -32,7 +32,7 @@ class TestTddDom(unittest.TestCase):
         self.assertEqual(tdd_dom.div(), "<div></div>")
 
     def test_p(self):
-        self.assertEqual(tdd_dom.p("Hello World."), "<p>Hello World</p>")
+        self.assertEqual(tdd_dom.p("Hello World."), "<p>Hello World.</p>")
 
     def test_br(self):
         self.assertTrue(tdd_dom.br().startswith("<br"))
