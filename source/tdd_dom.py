@@ -20,6 +20,26 @@ def tag(name="div", content="", attributes={}, is_closed=True):
     return closed_tag(name, content, attributes) if is_closed else open_tag(name, attributes)
 
 
+def doctype():
+    return "<!doctype html>"
+
+
+def html(content="", attributes={}):
+    return tag("html", content, attributes, True)
+
+
+def body(content="", attributes={}):
+    return tag("body", content, attributes, True)
+
+
+def head(content="", attributes={}):
+    return tag("head", content, attributes, True)
+
+
+def title(content="", attributes={}):
+    return tag("title", content, attributes, True)
+
+
 def div(content="", attributes={}):
     return tag("div", content, attributes, True)
 
